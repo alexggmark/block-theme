@@ -11,7 +11,7 @@
   assign background_color = block_settings.input_background_color | default: settings.palette_input_background
   assign text_color = block_settings.input_text_color
   assign border = block_settings.input_border_color
-  assign page_text_contrast = background_color | color_contrast: settings.page_text_color
+  assign page_text_contrast = background_color | color_contrast: settings.color_palette.foreground
 
   assign bg_brightness = background_color | color_brightness
   if bg_brightness > 128
@@ -30,8 +30,8 @@
     assign effective_text_color = text_color
     assign effective_text_color_rgb = text_color.rgb
   elsif page_text_contrast >= 4.5
-    assign effective_text_color = settings.page_text_color
-    assign effective_text_color_rgb = settings.page_text_color.rgb
+    assign effective_text_color = settings.color_palette.foreground
+    assign effective_text_color_rgb = settings.color_palette.foreground.rgb
   else
     assign effective_text_color = contrast_var
     assign effective_text_color_rgb = contrast_var_rgb

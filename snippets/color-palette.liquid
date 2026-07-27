@@ -165,17 +165,22 @@
 {% style %}
   /* Palette colors */
   :root {
-    --color-background: {{ settings.page_background_color }};
-    --color-background-rgb: {{ settings.page_background_color.rgb }};
-    --color-foreground: {{ settings.page_text_color }};
-    --color-foreground-rgb: {{ settings.page_text_color.rgb }};
-    --color-border: {{ settings.page_text_color }};
-    --color-border-rgb: {{ settings.page_text_color.rgb }};
+    --color-background: {{ settings.color_palette.background }};
+    --color-background-rgb: {{ settings.color_palette.background.rgb }};
+    --color-foreground: {{ settings.color_palette.foreground }};
+    --color-foreground-rgb: {{ settings.color_palette.foreground.rgb }};
+    --color-border: {{ settings.color_palette.foreground }};
+    --color-border-rgb: {{ settings.color_palette.foreground.rgb }};
     --palette-lightest: {{ palette_lightest }};
     --palette-lightest-rgb: {{ palette_lightest.rgb }};
     --palette-darkest: {{ palette_darkest }};
     --palette-darkest-rgb: {{ palette_darkest.rgb }};
-    {% render 'brightness-opacities', background: settings.page_background_color %}
+
+    --color-primary: {{ settings.color_palette.primary }};
+    --color-primary-rgb: {{ settings.color_palette.primary.rgb }};
+    --color-secondary: {{ settings.color_palette.secondary }};
+    --color-secondary-rgb: {{ settings.color_palette.secondary.rgb }};
+    {% render 'brightness-opacities', background: settings.color_palette.background %}
 
     --color-primary-button-text: rgb({{ settings.palette_primary_button_text.rgba }});
     --color-primary-button-background: rgb({{ settings.palette_primary_button_background.rgba }});

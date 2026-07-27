@@ -2,7 +2,7 @@
   Smart Color Contrast Override System
 
   When a custom background color is set:
-  - check if the global settings.page_text_color provides sufficient contrast against the background,
+  - check if the global settings.color_palette.foreground provides sufficient contrast against the background,
     - if yes, use it as the text color
     - if no, use the palette extreme (lightest or darkest) that best contrasts the background
 
@@ -67,16 +67,16 @@
 
     # --- Effective foreground text color ---
     # 1. Explicit text_color wins.
-    # 2. Else, use settings.page_text_color if it contrasts (>= 4.5).
+    # 2. Else, use settings.color_palette.foreground if it contrasts (>= 4.5).
     # 3. Else, fall back to the brightness-based palette extreme (contrast_var).
     if text_color != blank
       assign effective_text_color = text_color
       assign effective_text_color_rgb = text_color.rgb
     else
-      assign page_text_contrast = background_color | color_contrast: settings.page_text_color
+      assign page_text_contrast = background_color | color_contrast: settings.color_palette.foreground
       if page_text_contrast >= 4.5
-        assign effective_text_color = settings.page_text_color
-        assign effective_text_color_rgb = settings.page_text_color.rgb
+        assign effective_text_color = settings.color_palette.foreground
+        assign effective_text_color_rgb = settings.color_palette.foreground.rgb
       else
         assign effective_text_color = contrast_var
         assign effective_text_color_rgb = contrast_rgb_var

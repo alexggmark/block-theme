@@ -1,14 +1,6 @@
 {%- doc -%}
-  Renders a list of products from a chosen collection.
-
-  Standalone block port of the legacy `product-list` section, modelled on
-  `blocks/product-recommendations.liquid`. Because it is a block it can be
-  dropped into any generic section, so layout concerns that belonged to the
-  old section (width, alignment) are deliberately omitted — the parent
-  section owns those.
-
-  The product card is rendered as a static block inside the loop, so a single
-  set of card settings applies to every product in the list.
+  Renders a list of products from a chosen collection. Block port of the legacy
+  `product-list` section — the parent section owns width and alignment.
 {%- enddoc -%}
 
 {% liquid
@@ -52,7 +44,6 @@
         {% endunless %}
       {% endfor %}
     {% else %}
-      {% comment %} Onboarding: render placeholder cards when no collection is picked {% endcomment %}
       {% for i in (1..max_items) %}
         <div class="resource-list__item">
           {% content_for 'block', type: '_product-card', id: 'static-product-card', closest.product: null %}
@@ -65,7 +56,6 @@
   {% endcapture %}
 
   {% liquid
-    # Create an array from the list items to be used for different layout types
     assign list_items_array = list_items | strip | split: '<!--@list/split-->'
   %}
 

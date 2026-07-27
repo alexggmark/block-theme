@@ -64,7 +64,9 @@
         "id": "color_palette",
         "default": {
           "background": "#ffffff",
-          "foreground": "#000000"
+          "foreground": "#000000",
+          "primary": "#4F46E5",
+          "secondary": "#F0EFFC"
         }
       }
     ]
@@ -72,21 +74,6 @@
   {
     "name": "t:names.typography",
     "settings": [
-      {
-        "type": "header",
-        "content": "t:content.colors"
-      },
-      {
-        "type": "color",
-        "id": "page_text_color",
-        "label": "t:settings.page_text_color",
-        "default": "{{ settings.color_palette.foreground }}",
-        "info": "t:info.page_text_color_default_info"
-      },
-      {
-        "type": "paragraph",
-        "content": "t:content.page_text_color_contrast_info"
-      },
       {
         "type": "header",
         "content": "t:content.fonts"
@@ -1100,12 +1087,6 @@
   {
     "name": "t:names.page_layout",
     "settings": [
-      {
-        "type": "color",
-        "id": "page_background_color",
-        "label": "t:settings.page_background_color",
-        "default": "{{ settings.color_palette.background }}"
-      },
       {
         "type": "select",
         "id": "page_width",

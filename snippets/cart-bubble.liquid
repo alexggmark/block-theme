@@ -8,8 +8,8 @@
 {%- enddoc -%}
 
 {% liquid
-  assign bubble_bg_fallback = settings.page_text_color
-  assign bubble_text_fallback = settings.page_background_color
+  assign bubble_bg_fallback = settings.color_palette.foreground
+  assign bubble_text_fallback = settings.color_palette.background
 %}
 
 <div

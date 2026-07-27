@@ -39,7 +39,7 @@
     assign transparent = 'not-sticky'
   endif
 
-  assign text_color_transparent = transparent_text_color_setting | default: settings.page_text_color
+  assign text_color_transparent = transparent_text_color_setting | default: settings.color_palette.foreground
   assign transparent_text_brightness = text_color_transparent | color_brightness
   if transparent_text_brightness > 128
     assign transparent_text_contrast = 'var(--palette-darkest)'
@@ -54,8 +54,8 @@
   endif
   if cart_bubble_color_override
     if section.settings.bubble_style == 'custom'
-      assign cart_bubble_background = section.settings.bubble_background_color | default: section.settings.text_color_top | default: settings.page_text_color
-      assign cart_bubble_text = section.settings.bubble_text_color | default: section.settings.background_color_top | default: settings.page_background_color
+      assign cart_bubble_background = section.settings.bubble_background_color | default: section.settings.text_color_top | default: settings.color_palette.foreground
+      assign cart_bubble_text = section.settings.bubble_text_color | default: section.settings.background_color_top | default: settings.color_palette.background
     elsif section.settings.text_color_top != blank
       assign cart_bubble_background = section.settings.text_color_top
       if section.settings.background_color_top != blank
@@ -326,7 +326,7 @@
 <header-component
   id="header-component"
   class="{{ class }}"
-  data-theme-color="rgb({{ section.settings.background_color_top.rgb | default: settings.page_background_color.rgb }})"
+  data-theme-color="rgb({{ section.settings.background_color_top.rgb | default: settings.color_palette.background.rgb }})"
   data-bubble-style="{{ section.settings.bubble_style }}"
   {% if transparent %}
     transparent="{{ transparent }}"
@@ -343,8 +343,8 @@
     data-transparent-background="{{ background_transparent_color_value }}"
   {% endif %}
   style="
-    --color-background-top-row: rgba({{ section.settings.background_color_top.rgba | default: settings.page_background_color.rgba }});
-    --color-background-bottom-row: rgba({{ section.settings.background_color_bottom.rgba | default: settings.page_background_color.rgba }});
+    --color-background-top-row: rgba({{ section.settings.background_color_top.rgba | default: settings.color_palette.background.rgba }});
+    --color-background-bottom-row: rgba({{ section.settings.background_color_bottom.rgba | default: settings.color_palette.background.rgba }});
     {% if transparent and text_color_transparent != blank %}
       --color-transparent-text: {{ text_color_transparent }};
       --color-transparent-text-rgb: {{ text_color_transparent.rgb }};

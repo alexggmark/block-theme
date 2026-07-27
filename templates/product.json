@@ -22,7 +22,7 @@
             "disclosure_heading_preset": "h6",
             "text_color": "",
             "dividers": true,
-            "divider_color": "{{ settings.color_palette.color2 }}",
+            "divider_color": "#DFDFDF",
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -184,7 +184,7 @@
               "settings": {
                 "thickness": 1,
                 "corner_radius": "square",
-                "divider_color": "{{ settings.color_palette.color2 }}",
+                "divider_color": "#DFDFDF",
                 "width_percent": 100,
                 "padding-block-start": 0,
                 "padding-block-end": 0

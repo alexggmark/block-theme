@@ -14,7 +14,45 @@
       "blocks": {},
       "block_order": [],
       "settings": {}
+    },
+    "section_buttons": {
+      "type": "section",
+      "blocks": {
+        "button_primary": {
+          "type": "button",
+          "settings": {
+            "label": "Primary",
+            "link": "shopify://collections/all",
+            "style_class": "button"
+          }
+        },
+        "button_secondary": {
+          "type": "button",
+          "settings": {
+            "label": "Secondary",
+            "link": "shopify://collections/all",
+            "style_class": "button-secondary"
+          }
+        },
+        "button_unstyled": {
+          "type": "button",
+          "settings": {
+            "label": "Unstyled",
+            "link": "shopify://collections/all",
+            "style_class": "button-unstyled"
+          }
+        }
+      },
+      "block_order": ["button_primary", "button_secondary", "button_unstyled"],
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "gap": 12,
+        "section_width": "page-width"
+      }
     }
   },
-  "order": ["section_main"]
+  "order": ["section_main", "section_buttons"]
 }

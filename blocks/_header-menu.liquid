@@ -8,7 +8,7 @@
 
 {% liquid
   assign block_settings = block.settings
-  assign effective_submenu_color = block_settings.background_color | default: settings.page_background_color
+  assign effective_submenu_color = block_settings.background_color | default: settings.color_palette.background
 %}
 
 {% case variant %}
@@ -72,8 +72,8 @@
 
       assign background_color_classes = ''
       assign background_color_setting_id = 'background_color_' | append: section.settings.menu_row
-      assign current_background_color = block_settings.background_color | default: settings.page_background_color
-      assign parent_background_color = section.settings[background_color_setting_id] | default: settings.page_background_color
+      assign current_background_color = block_settings.background_color | default: settings.color_palette.background
+      assign parent_background_color = section.settings[background_color_setting_id] | default: settings.color_palette.background
 
       if parent_background_color != current_background_color or block_settings.text_color != blank
         assign background_color_classes = ' color-custom-' | append: block.id
