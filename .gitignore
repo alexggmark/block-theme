@@ -1,0 +1,22 @@
+# Editor / AI tooling
+.claude/
+.cursor/
+.aider*
+.github/copilot-instructions.md
+CLAUDE.md
+AGENTS.md
+.mcp.json
+
+# Shopify CLI
+.shopify/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.env
+.env.local
