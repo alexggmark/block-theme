@@ -1064,35 +1064,30 @@ input:not(:placeholder-shown)::placeholder {
   cursor: not-allowed;
 }
 
+/* Variants pick a shape; --scheme-fg/--scheme-bg supply the colour, so the surface's
+   light/dark setting decides it. Defaults live on :root for buttons outside a Box. */
 .button,
 .button--primary,
 button.shopify-payment-button__button--unbranded {
-  --button-color: var(--palette-background);
-  --button-background-color: var(--palette-foreground);
-  --button-border-color: var(--palette-foreground);
-  --button-focus-outline-color: var(--palette-foreground);
+  --button-color: var(--scheme-bg);
+  --button-background-color: var(--scheme-fg);
+  --button-border-color: var(--scheme-fg);
+  --button-focus-outline-color: var(--scheme-fg);
 }
 
-.button--secondary,
+.button--outline {
+  --button-color: var(--scheme-fg);
+  --button-background-color: transparent;
+  --button-border-color: var(--scheme-fg);
+  --button-focus-outline-color: var(--scheme-fg);
+}
+
+/* Inverse fill. Internal chrome only — not offered as a merchant option. */
 .button-secondary {
-  --button-color: var(--palette-foreground);
-  --button-background-color: var(--palette-background);
-  --button-border-color: var(--palette-foreground);
-  --button-focus-outline-color: var(--palette-foreground);
-}
-
-.button--outline-primary {
-  --button-color: var(--palette-foreground);
-  --button-background-color: transparent;
-  --button-border-color: var(--palette-foreground);
-  --button-focus-outline-color: var(--palette-foreground);
-}
-
-.button--outline-secondary {
-  --button-color: var(--palette-background);
-  --button-background-color: transparent;
-  --button-border-color: var(--palette-background);
-  --button-focus-outline-color: var(--palette-background);
+  --button-color: var(--scheme-fg);
+  --button-background-color: var(--scheme-bg);
+  --button-border-color: var(--scheme-fg);
+  --button-focus-outline-color: var(--scheme-fg);
 }
 
 @property --glass-angle-1 {
@@ -1114,7 +1109,7 @@ button.shopify-payment-button__button--unbranded {
   --glass-ease: cubic-bezier(0.25, 1, 0.5, 1);
 
   /* --glass-text is checked against the sheen-lightened backdrop, not the surface. */
-  --button-color: var(--glass-text, var(--color-foreground));
+  --button-color: var(--glass-text, var(--scheme-fg));
   --button-background-color: transparent;
   --button-border-color: transparent;
   --button-focus-outline-color: rgb(var(--glass-tint) / 0.8);
@@ -1250,7 +1245,7 @@ button.shopify-payment-button__button--unbranded {
 
 .button--underline {
   /* No background of its own, so it follows the surface's declared scheme like glass does. */
-  --button-color: var(--color-foreground);
+  --button-color: var(--scheme-fg);
   --button-background-color: transparent;
   --button-border-color: transparent;
 
@@ -1614,13 +1609,18 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) .volume-pricing-note {
   grid-row: span var(--span, 1);
 }
 
-/* Box has no per-instance padding settings, so spacing-style emits nothing for it
-   and these feed the .spacing-style rule directly. --box-padding halves on mobile. */
+/* Box has no per-instance padding or radius settings, so border-override and
+   spacing-style emit nothing for it and these feed their rules directly. Scoped to
+   .box-block on purpose: a group nested in a Box, and the section canvas, share the
+   same renderer but should not inherit the tile's rounding. */
 .box-block {
   --padding-block-start: var(--box-padding);
   --padding-block-end: var(--box-padding);
   --padding-inline-start: var(--box-padding);
   --padding-inline-end: var(--box-padding);
+  --border-radius: var(--layout-corner-radius);
+
+  overflow: var(--layout-overflow);
 }
 
 @media screen and (max-width: 749px) {

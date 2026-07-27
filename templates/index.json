@@ -29,28 +29,12 @@
                 "style_class": "button button--primary"
               }
             },
-            "button_secondary": {
+            "button_outline": {
               "type": "button",
               "settings": {
-                "label": "Secondary",
+                "label": "Outline",
                 "link": "shopify://collections/all",
-                "style_class": "button button--secondary"
-              }
-            },
-            "button_outline_primary": {
-              "type": "button",
-              "settings": {
-                "label": "Outline primary",
-                "link": "shopify://collections/all",
-                "style_class": "button button--outline-primary"
-              }
-            },
-            "button_outline_secondary": {
-              "type": "button",
-              "settings": {
-                "label": "Outline secondary",
-                "link": "shopify://collections/all",
-                "style_class": "button button--outline-secondary"
+                "style_class": "button button--outline"
               }
             },
             "button_glass": {
@@ -61,7 +45,7 @@
                 "style_class": "button button--glass"
               }
             },
-            "button_unstyled": {
+            "button_underline": {
               "type": "button",
               "settings": {
                 "label": "Underline",
@@ -72,11 +56,9 @@
           },
           "block_order": [
             "button_primary",
-            "button_secondary",
-            "button_outline_primary",
-            "button_outline_secondary",
+            "button_outline",
             "button_glass",
-            "button_unstyled"
+            "button_underline"
           ]
         }
       },

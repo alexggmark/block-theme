@@ -115,6 +115,10 @@
     --palette-foreground: {{ settings.color_palette.foreground }};
     --palette-background: {{ settings.color_palette.background }};
 
+    /* Button ink and its inverse. A Box overrides both from its light/dark scheme. */
+    --scheme-fg: var(--palette-foreground);
+    --scheme-bg: var(--palette-background);
+
     --color-primary: {{ settings.color_palette.primary }};
     --color-primary-rgb: {{ settings.color_palette.primary.rgb }};
     --color-secondary: {{ settings.color_palette.secondary }};

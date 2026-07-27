@@ -21,13 +21,142 @@
       "type": "_group"
     },
     {
-      "type": "@theme"
+      "type": "accelerated-checkout"
     },
     {
-      "type": "@app"
+      "type": "accordion"
+    },
+    {
+      "type": "add-to-cart"
+    },
+    {
+      "type": "bb_product-list"
+    },
+    {
+      "type": "button"
+    },
+    {
+      "type": "buy-buttons"
+    },
+    {
+      "type": "collection-card"
+    },
+    {
+      "type": "collection-title"
+    },
+    {
+      "type": "comparison-slider"
+    },
+    {
+      "type": "contact-form"
+    },
+    {
+      "type": "contact-form-submit-button"
+    },
+    {
+      "type": "custom-liquid"
+    },
+    {
+      "type": "disclosures"
+    },
+    {
+      "type": "email-signup"
+    },
+    {
+      "type": "featured-collection"
+    },
+    {
+      "type": "filters"
+    },
+    {
+      "type": "follow-on-shop"
+    },
+    {
+      "type": "footer-copyright"
+    },
+    {
+      "type": "footer-policy-list"
+    },
+    {
+      "type": "icon"
+    },
+    {
+      "type": "image"
+    },
+    {
+      "type": "jumbo-text"
+    },
+    {
+      "type": "logo"
+    },
+    {
+      "type": "menu"
+    },
+    {
+      "type": "page"
+    },
+    {
+      "type": "page-content"
+    },
+    {
+      "type": "payment-icons"
+    },
+    {
+      "type": "popup-link"
+    },
+    {
+      "type": "price"
+    },
+    {
+      "type": "product-card"
+    },
+    {
+      "type": "product-custom-property"
+    },
+    {
+      "type": "product-description"
+    },
+    {
+      "type": "product-inventory"
+    },
+    {
+      "type": "product-recommendations"
+    },
+    {
+      "type": "product-title"
+    },
+    {
+      "type": "quantity"
+    },
+    {
+      "type": "review"
+    },
+    {
+      "type": "sku"
+    },
+    {
+      "type": "social-links"
+    },
+    {
+      "type": "spacer"
+    },
+    {
+      "type": "swatches"
+    },
+    {
+      "type": "text"
+    },
+    {
+      "type": "variant-picker"
+    },
+    {
+      "type": "video"
     },
     {
       "type": "_divider"
+    },
+    {
+      "type": "@app"
     }
   ],
   "settings": [
@@ -156,6 +285,16 @@
       ],
       "default": "center",
       "visible_if": "{{ block.settings.content_direction == 'column' }}"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "t:settings.gap",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 12
     },
     {
       "type": "header",
