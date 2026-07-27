@@ -172,6 +172,7 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "box_padding": "Box padding",
     "span": "Span",
     "alignment": "對齊",
     "autoplay": "自動播放",
@@ -864,6 +865,7 @@
     "input_field": "輸入欄位"
   },
   "content": {
+    "bento": "Bento controls",
     "advanced": "進階",
     "background_image": "背景圖片",
     "background_video": "背景影片",

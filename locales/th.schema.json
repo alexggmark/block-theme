@@ -172,6 +172,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "box_padding": "Box padding",
     "span": "Span",
     "alignment": "การจัดตำแหน่ง",
     "autoplay": "เล่นอัตโนมัติ",
@@ -864,6 +865,7 @@
     "input_field": "ช่องกรอกข้อมูล"
   },
   "content": {
+    "bento": "Bento controls",
     "advanced": "ขั้นสูง",
     "background_image": "รูปภาพพื้นหลัง",
     "background_video": "วิดีโอพื้นหลัง",

@@ -172,6 +172,7 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "box_padding": "Box padding",
     "span": "Span",
     "alignment": "Zarovnání",
     "autoplay": "Automatické přehrávání",
@@ -864,6 +865,7 @@
     "input_field": "Vstupní pole"
   },
   "content": {
+    "bento": "Bento controls",
     "advanced": "Pokročilé",
     "background_image": "Obrázek na pozadí",
     "background_video": "Video na pozadí",

@@ -172,6 +172,7 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "box_padding": "Box padding",
     "span": "Span",
     "alignment": "Alineación",
     "autoplay": "Reproducción automática",
@@ -864,6 +865,7 @@
     "input_field": "Campo de entrada"
   },
   "content": {
+    "bento": "Bento controls",
     "advanced": "Avanzado",
     "background_image": "Imagen de fondo",
     "background_video": "Video de fondo",

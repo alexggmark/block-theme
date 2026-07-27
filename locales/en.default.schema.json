@@ -33,6 +33,7 @@
     "text": "Text"
   },
   "content": {
+    "bento": "Bento controls",
     "visible_if_collection_has_more_products": "Visible if collection has more products than shown",
     "advanced": "Advanced",
     "appearance": "Appearance",
@@ -735,6 +736,7 @@
     "below_media": "Below media"
   },
   "settings": {
+    "box_padding": "Box padding",
     "accordion": "Accordion",
     "account": "Account",
     "actions_display_style": "Menu style",

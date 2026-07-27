@@ -8,7 +8,7 @@
   section: section,
   children: children,
   section_id: section.id,
-  background_color: section.settings.background_color
+  background_color: settings.color_palette.foreground
 %}
 
 {% schema %}
@@ -113,13 +113,6 @@
         }
       ],
       "default": "none"
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "t:settings.background_color",
-      "placeholder": "t:settings.default",
-      "visible_if": "{{ section.settings.background_media == 'none' }}"
     },
     {
       "type": "video",

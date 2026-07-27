@@ -172,6 +172,7 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "box_padding": "Box padding",
     "span": "Span",
     "alignment": "Justering",
     "autoplay": "Automatisk afspilning",
@@ -864,6 +865,7 @@
     "input_field": "Indtastningsfelt"
   },
   "content": {
+    "bento": "Bento controls",
     "advanced": "Avanceret",
     "background_image": "Baggrundsbillede",
     "background_video": "Baggrundsvideo",

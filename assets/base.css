@@ -297,16 +297,8 @@ p:empty {
 .page-width-normal,
 .page-width-narrow,
 .page-width-content {
-  --page-margin: 16px;
-}
-
-@media screen and (min-width: 750px) {
-  .page-width-wide,
-  .page-width-normal,
-  .page-width-narrow,
-  .page-width-content {
-    --page-margin: 40px;
-  }
+  /* --layout-gutter already halves itself below 750px, so no breakpoint needed here. */
+  --page-margin: var(--layout-gutter, 16px);
 }
 
 .page-width-wide {
@@ -354,6 +346,11 @@ p:empty {
   /* Offset for full-width sections to account for the page margin,
   used for Marquee — note that --util-page-margin-offset doesn't work here */
   --full-page-margin-inline-offset: calc(((100vw - var(--full-page-grid-central-column-width)) / 2) * -1);
+
+  /* Half a gutter each side, so two stacked sections sum to one full gutter between
+     their tiles. Sits on .section, not the --padding-block-* vars, which every section
+     sets to 0px and would override. Merchant padding stays additive on the inner wrapper. */
+  padding-block: calc(var(--layout-gutter) / 2);
 
   width: 100%;
 
@@ -1614,6 +1611,15 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) .volume-pricing-note {
 
 .column-block > * {
   grid-row: span var(--span, 1);
+}
+
+/* Box has no per-instance padding settings, so spacing-style emits nothing for it
+   and these feed the .spacing-style rule directly. --box-padding halves on mobile. */
+.box-block {
+  --padding-block-start: var(--box-padding);
+  --padding-block-end: var(--box-padding);
+  --padding-inline-start: var(--box-padding);
+  --padding-inline-end: var(--box-padding);
 }
 
 @media screen and (max-width: 749px) {

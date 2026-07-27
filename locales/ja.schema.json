@@ -172,6 +172,7 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "box_padding": "Box padding",
     "span": "Span",
     "alignment": "配置",
     "autoplay": "自動再生",
@@ -864,6 +865,7 @@
     "input_field": "入力フィールド"
   },
   "content": {
+    "bento": "Bento controls",
     "advanced": "高度な設定",
     "background_image": "背景画像",
     "background_video": "背景動画",

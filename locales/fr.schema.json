@@ -172,6 +172,7 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "box_padding": "Box padding",
     "span": "Span",
     "autoplay": "Lecture automatique",
     "background": "Arrière-plan",
@@ -864,6 +865,7 @@
     "input_field": "Champ de saisie"
   },
   "content": {
+    "bento": "Bento controls",
     "background_video": "Vidéo de fond",
     "describe_the_video_for": "Décrivez la vidéo pour les clients utilisant des lecteurs d’écran. [En savoir plus](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "width_is_automatically_optimized": "La largeur est automatiquement optimisée pour les appareils mobiles.",

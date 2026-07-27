@@ -1088,6 +1088,10 @@
     "name": "t:names.page_layout",
     "settings": [
       {
+        "type": "header",
+        "content": "t:content.width"
+      },
+      {
         "type": "select",
         "id": "page_width",
         "label": "t:settings.page_width",
@@ -1108,6 +1112,10 @@
         "default": "narrow"
       },
       {
+        "type": "header",
+        "content": "t:content.bento"
+      },
+      {
         "type": "range",
         "id": "layout_gutter",
         "label": "t:settings.gap",
@@ -1126,6 +1134,16 @@
         "step": 2,
         "unit": "px",
         "default": 0
+      },
+      {
+        "type": "range",
+        "id": "box_padding",
+        "label": "t:settings.box_padding",
+        "min": 0,
+        "max": 4,
+        "step": 0.2,
+        "unit": "rem",
+        "default": 1
       }
     ]
   },
