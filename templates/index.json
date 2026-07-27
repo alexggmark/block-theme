@@ -18,72 +18,78 @@
     "section_buttons": {
       "type": "section",
       "blocks": {
-        "button_primary": {
-          "type": "button",
-          "settings": {
-            "label": "Primary",
-            "link": "shopify://collections/all",
-            "style_class": "button button--primary"
-          }
-        },
-        "button_secondary": {
-          "type": "button",
-          "settings": {
-            "label": "Secondary",
-            "link": "shopify://collections/all",
-            "style_class": "button button--secondary"
-          }
-        },
-        "button_outline_primary": {
-          "type": "button",
-          "settings": {
-            "label": "Outline primary",
-            "link": "shopify://collections/all",
-            "style_class": "button button--outline-primary"
-          }
-        },
-        "button_outline_secondary": {
-          "type": "button",
-          "settings": {
-            "label": "Outline secondary",
-            "link": "shopify://collections/all",
-            "style_class": "button button--outline-secondary"
-          }
-        },
-        "button_glass": {
-          "type": "button",
-          "settings": {
-            "label": "Glass",
-            "link": "shopify://collections/all",
-            "style_class": "button button--glass"
-          }
-        },
-        "button_unstyled": {
-          "type": "button",
-          "settings": {
-            "label": "Underline",
-            "link": "shopify://collections/all",
-            "style_class": "button button--underline"
-          }
+        "box_content": {
+          "type": "box",
+          "blocks": {
+            "button_primary": {
+              "type": "button",
+              "settings": {
+                "label": "Primary",
+                "link": "shopify://collections/all",
+                "style_class": "button button--primary"
+              }
+            },
+            "button_secondary": {
+              "type": "button",
+              "settings": {
+                "label": "Secondary",
+                "link": "shopify://collections/all",
+                "style_class": "button button--secondary"
+              }
+            },
+            "button_outline_primary": {
+              "type": "button",
+              "settings": {
+                "label": "Outline primary",
+                "link": "shopify://collections/all",
+                "style_class": "button button--outline-primary"
+              }
+            },
+            "button_outline_secondary": {
+              "type": "button",
+              "settings": {
+                "label": "Outline secondary",
+                "link": "shopify://collections/all",
+                "style_class": "button button--outline-secondary"
+              }
+            },
+            "button_glass": {
+              "type": "button",
+              "settings": {
+                "label": "Glass",
+                "link": "shopify://collections/all",
+                "style_class": "button button--glass"
+              }
+            },
+            "button_unstyled": {
+              "type": "button",
+              "settings": {
+                "label": "Underline",
+                "link": "shopify://collections/all",
+                "style_class": "button button--underline"
+              }
+            }
+          },
+          "block_order": [
+            "button_primary",
+            "button_secondary",
+            "button_outline_primary",
+            "button_outline_secondary",
+            "button_glass",
+            "button_unstyled"
+          ]
         }
       },
       "block_order": [
-        "button_primary",
-        "button_secondary",
-        "button_outline_primary",
-        "button_outline_secondary",
-        "button_glass",
-        "button_unstyled"
+        "box_content"
       ],
       "settings": {
-        "content_direction": "row",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "gap": 12,
         "section_width": "page-width"
       }
     }
   },
-  "order": ["section_main", "section_buttons"]
+  "order": [
+    "section_main",
+    "section_buttons"
+  ]
 }

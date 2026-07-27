@@ -18,6 +18,9 @@
   "tag": null,
   "blocks": [
     {
+      "type": "_group"
+    },
+    {
       "type": "@theme"
     },
     {
@@ -153,16 +156,6 @@
       ],
       "default": "center",
       "visible_if": "{{ block.settings.content_direction == 'column' }}"
-    },
-    {
-      "type": "range",
-      "id": "gap",
-      "label": "t:settings.gap",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "default": 12
     },
     {
       "type": "header",
@@ -433,16 +426,6 @@
       "label": "t:settings.color",
       "placeholder": "t:settings.default",
       "visible_if": "{{ block.settings.border != 'none' }}"
-    },
-    {
-      "type": "range",
-      "id": "border_radius",
-      "label": "t:settings.border_radius",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "default": 0
     },
     {
       "type": "header",

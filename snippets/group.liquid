@@ -25,7 +25,7 @@
   class="
     group-block
     group-block--height-{{ settings.height }}
-    group-block--width-{{ settings.width }}
+    {% if settings.width %}group-block--width-{{ settings.width }}{% endif %}
     border-style
     spacing-style
     size-style

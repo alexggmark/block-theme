@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "box": "Box",
     "404": "404",
     "colors": "調色盤",
     "custom_section": "自訂區段",
@@ -171,6 +172,8 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "span_y": "Row span",
+    "span_x": "Column span",
     "alignment": "對齊",
     "autoplay": "自動播放",
     "background": "背景",

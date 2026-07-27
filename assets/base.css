@@ -1587,8 +1587,43 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) .volume-pricing-note {
 
 .layout-panel-flex {
   display: flex;
-  gap: var(--gap);
+  gap: var(--gap, var(--layout-gutter));
   height: 100%;
+}
+
+.section-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  gap: var(--layout-gutter);
+  height: 100%;
+}
+
+.section-grid > * {
+  grid-column: span var(--span-x, 1);
+  grid-row: span var(--span-y, 1);
+}
+
+.column-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-gutter);
+}
+
+@media screen and (max-width: 749px) {
+  .section-grid {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-auto-rows: auto;
+    height: auto;
+  }
+
+  /* A leftover span would create implicit tracks instead of stacking. */
+  .section-grid > * {
+    grid-column: auto;
+    grid-row: auto;
+  }
 }
 
 .shopify-block:has(> [shopify-block-empty]) {
@@ -2204,11 +2239,6 @@ label:has(input[type='checkbox']:disabled) {
 .group-block-content {
   height: 100%;
   width: 100%;
-}
-
-/* Container styles */
-.section-content-wrapper.section-content-wrapper:where(.layout-panel-flex) .group-block--fill {
-  flex: 1;
 }
 
 /* Flex behavior for width variants */

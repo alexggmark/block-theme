@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "box": "Box",
     "404": "404",
     "custom_section": "Özel bölüm",
     "icon": "Simge",
@@ -171,6 +172,8 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "span_y": "Row span",
+    "span_x": "Column span",
     "autoplay": "Otomatik oynatma",
     "background": "Arka plan",
     "border_radius": "Köşe yarıçapı",

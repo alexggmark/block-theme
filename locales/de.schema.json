@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "box": "Box",
     "404": "404",
     "custom_section": "Benutzerdefinierter Abschnitt",
     "icon": "Symbol",
@@ -171,6 +172,8 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "span_y": "Row span",
+    "span_x": "Column span",
     "autoplay": "Autoplay",
     "background": "Hintergrund",
     "border_radius": "Eckenradius",

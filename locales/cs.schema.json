@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "box": "Box",
     "404": "404",
     "colors": "Paleta barev",
     "custom_section": "Vlastní sekce",
@@ -171,6 +172,8 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "span_y": "Row span",
+    "span_x": "Column span",
     "alignment": "Zarovnání",
     "autoplay": "Automatické přehrávání",
     "background": "Pozadí",

@@ -252,6 +252,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "box": "Box",
     "column": "Column",
     "product_title": "Product title",
     "custom_liquid": "Custom Liquid",
@@ -1101,6 +1102,8 @@
     "sticky_add_to_cart": "Sticky add to cart",
     "sticky_header": "Sticky header",
     // Icon line thickness setting label
+    "span_x": "Column span",
+    "span_y": "Row span",
     "stroke": "Stroke",
     "button_style": "Button style",
     "selected_button_style": "Selected button style",

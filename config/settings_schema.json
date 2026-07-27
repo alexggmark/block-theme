@@ -1106,6 +1106,26 @@
           }
         ],
         "default": "narrow"
+      },
+      {
+        "type": "range",
+        "id": "layout_gutter",
+        "label": "t:settings.gap",
+        "min": 0,
+        "max": 30,
+        "step": 2,
+        "unit": "px",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "layout_corner_radius",
+        "label": "t:settings.corner_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "default": 0
       }
     ]
   },

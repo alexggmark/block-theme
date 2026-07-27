@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "box": "Box",
     "404": "404",
     "colors": "Paleta de cores",
     "custom_section": "Seção personalizada",
@@ -171,6 +172,8 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "span_y": "Row span",
+    "span_x": "Column span",
     "alignment": "Alinhamento",
     "autoplay": "Reprodução automática",
     "background": "Plano de fundo",

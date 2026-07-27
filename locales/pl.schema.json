@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "box": "Box",
     "404": "404",
     "custom_section": "Sekcja niestandardowa",
     "icon": "Ikona",
@@ -171,6 +172,8 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "span_y": "Row span",
+    "span_x": "Column span",
     "autoplay": "Autoodtwarzanie",
     "background": "Tło",
     "border_radius": "Promień narożnika",

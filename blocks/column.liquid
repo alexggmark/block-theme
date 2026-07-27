@@ -1,0 +1,84 @@
+<div
+  class="column-block size-style"
+  style="
+    --span-x: {{ block.settings.span_x }};
+    --span-y: {{ block.settings.span_y }};
+    {% render 'size-style', settings: block.settings %}
+  "
+  {{ block.shopify_attributes }}
+>
+  {% content_for 'blocks' %}
+</div>
+
+{% schema %}
+{
+  "name": "t:names.column",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "box"
+    }
+  ],
+  "settings": [
+    {
+      "type": "range",
+      "id": "span_x",
+      "label": "t:settings.span_x",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "span_y",
+      "label": "t:settings.span_y",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "label": "t:settings.height",
+      "options": [
+        {
+          "value": "fit",
+          "label": "t:options.fit_content"
+        },
+        {
+          "value": "fill",
+          "label": "t:options.fill"
+        },
+        {
+          "value": "custom",
+          "label": "t:options.custom"
+        }
+      ],
+      "default": "fit"
+    },
+    {
+      "type": "range",
+      "id": "custom_height",
+      "label": "t:settings.custom_height",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.height == 'custom' }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.column",
+      "category": "t:categories.layout"
+    }
+  ]
+}
+{% endschema %}

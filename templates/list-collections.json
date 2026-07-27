@@ -12,7 +12,7 @@
       "type": "main-collection-list",
       "blocks": {
         "group_4FtiAg": {
-          "type": "group",
+          "type": "_group",
           "name": "t:names.header",
           "settings": {
             "content_direction": "column",

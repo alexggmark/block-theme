@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "box": "Box",
     "404": "404",
     "colors": "Fargepalett",
     "custom_section": "Egendefinert seksjon",
@@ -171,6 +172,8 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "span_y": "Row span",
+    "span_x": "Column span",
     "alignment": "Justering",
     "autoplay": "Autospill",
     "background": "Bakgrunn",

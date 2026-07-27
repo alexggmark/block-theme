@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "box": "Box",
     "404": "404",
     "colors": "จานสี",
     "custom_section": "ส่วนที่กำหนดเอง",
@@ -171,6 +172,8 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "span_y": "Row span",
+    "span_x": "Column span",
     "alignment": "การจัดตำแหน่ง",
     "autoplay": "เล่นอัตโนมัติ",
     "background": "พื้นหลัง",

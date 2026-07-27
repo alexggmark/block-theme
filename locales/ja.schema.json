@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "box": "Box",
     "404": "404",
     "colors": "カラーパレット",
     "custom_section": "カスタムセクション",
@@ -171,6 +172,8 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "span_y": "Row span",
+    "span_x": "Column span",
     "alignment": "配置",
     "autoplay": "自動再生",
     "background": "背景",

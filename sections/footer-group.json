@@ -15,7 +15,7 @@
       "type": "footer",
       "blocks": {
         "group_H6VpwJ": {
-          "type": "group",
+          "type": "_group",
           "settings": {
             "content_direction": "column",
             "vertical_on_mobile": true,

@@ -86,7 +86,7 @@
           },
           "blocks": {
             "group_icgrde": {
-              "type": "group",
+              "type": "_group",
               "name": "t:names.header",
               "settings": {
                 "content_direction": "column",
