@@ -172,8 +172,7 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
-    "span_y": "Row span",
-    "span_x": "Column span",
+    "span": "Span",
     "alignment": "Tasaus",
     "autoplay": "Automaattinen toisto",
     "background": "Tausta",

@@ -172,8 +172,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
-    "span_y": "Row span",
-    "span_x": "Column span",
+    "span": "Span",
     "alignment": "การจัดตำแหน่ง",
     "autoplay": "เล่นอัตโนมัติ",
     "background": "พื้นหลัง",

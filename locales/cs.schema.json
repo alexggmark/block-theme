@@ -172,8 +172,7 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
-    "span_y": "Row span",
-    "span_x": "Column span",
+    "span": "Span",
     "alignment": "Zarovnání",
     "autoplay": "Automatické přehrávání",
     "background": "Pozadí",

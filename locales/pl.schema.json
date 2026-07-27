@@ -172,8 +172,7 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
-    "span_y": "Row span",
-    "span_x": "Column span",
+    "span": "Span",
     "autoplay": "Autoodtwarzanie",
     "background": "Tło",
     "border_radius": "Promień narożnika",

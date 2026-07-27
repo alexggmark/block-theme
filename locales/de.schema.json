@@ -172,8 +172,7 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
-    "span_y": "Row span",
-    "span_x": "Column span",
+    "span": "Span",
     "autoplay": "Autoplay",
     "background": "Hintergrund",
     "border_radius": "Eckenradius",

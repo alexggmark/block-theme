@@ -172,8 +172,7 @@
     "disclosures": "開示情報"
   },
   "settings": {
-    "span_y": "Row span",
-    "span_x": "Column span",
+    "span": "Span",
     "alignment": "配置",
     "autoplay": "自動再生",
     "background": "背景",

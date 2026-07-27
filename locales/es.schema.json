@@ -172,8 +172,7 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
-    "span_y": "Row span",
-    "span_x": "Column span",
+    "span": "Span",
     "alignment": "Alineación",
     "autoplay": "Reproducción automática",
     "background": "Fondo",

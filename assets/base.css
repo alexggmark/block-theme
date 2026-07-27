@@ -1595,33 +1595,45 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) .volume-pricing-note {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
+  gap: var(--layout-gutter);
+  height: 100%;
+}
+
+/* Span sizes along the parent's flow axis: horizontal in a Section, vertical in a Column. */
+.section-grid > * {
+  grid-column: span var(--span, 1);
+}
+
+.column-block {
+  display: grid;
+  grid-auto-flow: row;
   grid-auto-rows: 1fr;
   gap: var(--layout-gutter);
   height: 100%;
 }
 
-.section-grid > * {
-  grid-column: span var(--span-x, 1);
-  grid-row: span var(--span-y, 1);
-}
-
-.column-block {
-  display: flex;
-  flex-direction: column;
-  gap: var(--layout-gutter);
+.column-block > * {
+  grid-row: span var(--span, 1);
 }
 
 @media screen and (max-width: 749px) {
   .section-grid {
     grid-auto-flow: row;
     grid-auto-columns: auto;
-    grid-auto-rows: auto;
     height: auto;
   }
 
   /* A leftover span would create implicit tracks instead of stacking. */
   .section-grid > * {
     grid-column: auto;
+  }
+
+  .column-block {
+    grid-auto-rows: auto;
+    height: auto;
+  }
+
+  .column-block > * {
     grid-row: auto;
   }
 }

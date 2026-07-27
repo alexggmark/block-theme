@@ -1,8 +1,7 @@
 <div
   class="column-block size-style"
   style="
-    --span-x: {{ block.settings.span_x }};
-    --span-y: {{ block.settings.span_y }};
+    --span: {{ block.settings.span }};
     {% render 'size-style', settings: block.settings %}
   "
   {{ block.shopify_attributes }}
@@ -22,17 +21,8 @@
   "settings": [
     {
       "type": "range",
-      "id": "span_x",
-      "label": "t:settings.span_x",
-      "min": 1,
-      "max": 6,
-      "step": 1,
-      "default": 1
-    },
-    {
-      "type": "range",
-      "id": "span_y",
-      "label": "t:settings.span_y",
+      "id": "span",
+      "label": "t:settings.span",
       "min": 1,
       "max": 6,
       "step": 1,

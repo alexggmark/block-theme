@@ -172,8 +172,7 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
-    "span_y": "Row span",
-    "span_x": "Column span",
+    "span": "Span",
     "alignment": "Justering",
     "autoplay": "Autospill",
     "background": "Bakgrunn",

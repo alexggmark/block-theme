@@ -172,8 +172,7 @@
     "disclosures": "披露信息"
   },
   "settings": {
-    "span_y": "Row span",
-    "span_x": "Column span",
+    "span": "Span",
     "alignment": "对齐方式",
     "autoplay": "自动播放",
     "background": "背景",
