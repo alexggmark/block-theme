@@ -589,6 +589,7 @@
     "title_preset": "Forudindstilling for titel"
   },
   "options": {
+    "dark": "Dark",
     "apple": "Apple",
     "arrow": "Pil",
     "auto": "Auto",

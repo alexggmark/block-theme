@@ -589,6 +589,7 @@
     "title_preset": "พรีเซ็ตชื่อ"
   },
   "options": {
+    "dark": "Dark",
     "apple": "Apple",
     "arrow": "ลูกศร",
     "auto": "อัตโนมัติ",

@@ -423,6 +423,7 @@
     "comparison_slider": "Comparison slider"
   },
   "options": {
+    "dark": "Dark",
     "above_carousel": "Above carousel",
     "accent": "Accent",
     "all": "All",

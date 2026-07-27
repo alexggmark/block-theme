@@ -1249,7 +1249,8 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .button--underline {
-  --button-color: var(--palette-foreground);
+  /* No background of its own, so it follows the surface's declared scheme like glass does. */
+  --button-color: var(--color-foreground);
   --button-background-color: transparent;
   --button-border-color: transparent;
 

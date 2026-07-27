@@ -589,6 +589,7 @@
     "title_preset": "Forhåndsinnstilling for tittel"
   },
   "options": {
+    "dark": "Dark",
     "apple": "Eple",
     "arrow": "Pil",
     "auto": "Auto",

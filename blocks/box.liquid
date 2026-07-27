@@ -6,23 +6,25 @@
   --span: {{ block.settings.span }};
 {% endcapture %}
 
+{% liquid
+  # Declared, not derived — a background image cannot be contrast-checked.
+  if block.settings.color_scheme == 'dark'
+    assign scheme_text = settings.color_palette.background
+  else
+    assign scheme_text = settings.color_palette.foreground
+  endif
+%}
+
 {% render 'group',
   children: children,
   settings: block.settings,
   shopify_attributes: block.shopify_attributes,
   background_color: block.settings.background_color,
+  text_color: scheme_text,
   block_id: block.id,
   class: 'box-block',
   style: span_style
 %}
-
-{% stylesheet %}
-  /* TODO: TEMPORARY — debug outline for bento layout testing. Delete this whole
-     stylesheet block before launch. Nothing else depends on it. */
-  .box-block {
-    border: 1px solid red;
-  }
-{% endstylesheet %}
 
 {% schema %}
 {
@@ -179,6 +181,22 @@
       "default": 1
     },
     {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "options": [
+        {
+          "value": "light",
+          "label": "t:options.light"
+        },
+        {
+          "value": "dark",
+          "label": "t:options.dark"
+        }
+      ],
+      "default": "light"
+    },
+    {
       "type": "header",
       "content": "t:content.layout"
     },
@@ -303,41 +321,6 @@
       ],
       "default": "center",
       "visible_if": "{{ block.settings.content_direction == 'column' }}"
-    },
-    {
-      "type": "header",
-      "content": "t:content.size"
-    },
-    {
-      "type": "select",
-      "id": "height",
-      "label": "t:settings.height",
-      "options": [
-        {
-          "value": "fit",
-          "label": "t:options.fit_content"
-        },
-        {
-          "value": "fill",
-          "label": "t:options.fill"
-        },
-        {
-          "value": "custom",
-          "label": "t:options.custom"
-        }
-      ],
-      "default": "fit"
-    },
-    {
-      "type": "range",
-      "id": "custom_height",
-      "label": "t:settings.custom_height",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "%",
-      "default": 100,
-      "visible_if": "{{ block.settings.height == 'custom' }}"
     },
     {
       "type": "header",

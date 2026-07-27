@@ -589,6 +589,7 @@
     "title_preset": "Préréglage du titre"
   },
   "options": {
+    "dark": "Dark",
     "apple": "Pomme",
     "arrow": "Flèche",
     "banana": "Banane",

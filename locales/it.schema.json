@@ -589,6 +589,7 @@
     "title_preset": "Preimpostazione titolo"
   },
   "options": {
+    "dark": "Dark",
     "apple": "Mela",
     "arrow": "Freccia",
     "auto": "Automatico",

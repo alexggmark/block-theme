@@ -589,6 +589,7 @@
     "title_preset": "Başlık ön ayarı"
   },
   "options": {
+    "dark": "Dark",
     "apple": "Apple",
     "arrow": "Ok",
     "banana": "Muz",

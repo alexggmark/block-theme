@@ -589,6 +589,7 @@
     "title_preset": "Förinställning för rubrik"
   },
   "options": {
+    "dark": "Dark",
     "apple": "Apple",
     "arrow": "Pil",
     "auto": "Auto",

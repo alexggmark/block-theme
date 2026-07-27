@@ -589,6 +589,7 @@
     "title_preset": "標題預設設定"
   },
   "options": {
+    "dark": "Dark",
     "apple": "Apple",
     "arrow": "箭頭",
     "auto": "自動",

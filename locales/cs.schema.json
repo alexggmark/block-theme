@@ -589,6 +589,7 @@
     "title_preset": "Předvolba nadpisu"
   },
   "options": {
+    "dark": "Dark",
     "apple": "Apple",
     "arrow": "Šipka",
     "auto": "Automaticky",

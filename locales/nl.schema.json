@@ -589,6 +589,7 @@
     "title_preset": "Titelvoorinstelling"
   },
   "options": {
+    "dark": "Dark",
     "apple": "Apple",
     "arrow": "Pijl",
     "banana": "Banaan",

@@ -589,6 +589,7 @@
     "title_preset": "Titelvoreinstellung"
   },
   "options": {
+    "dark": "Dark",
     "apple": "Apfel",
     "arrow": "Pfeil",
     "banana": "Banane",

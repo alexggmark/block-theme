@@ -589,6 +589,7 @@
     "title_preset": "タイトルプリセット"
   },
   "options": {
+    "dark": "Dark",
     "apple": "Apple",
     "arrow": "矢印",
     "auto": "自動",

@@ -7,6 +7,7 @@
   @param {string} [class] - Custom classes for the group block.
   @param {string} [style] - Custom inline styles for the group block.
   @param {string} [background_color] - The background color of the group block.
+  @param {string} [text_color] - Explicit text color. Declares the scheme instead of deriving it from the background.
   @param {string} [block_id] - The ID of the group block.
 
   @example
@@ -14,23 +15,30 @@
 {%- enddoc -%}
 
 {% liquid
+  # Background media normally suppresses contrast overrides, since an image cannot be
+  # measured. An explicit text_color is that measurement, so it keeps them.
   assign skip_contrast = false
-  if settings.background_media != blank and settings.background_media != 'none'
+  if settings.background_media != blank and settings.background_media != 'none' and text_color == blank
     assign skip_contrast = true
   endif
 %}
-{% render 'contrast-override', background_color: background_color, section_id: block_id, skip_contrast: skip_contrast %}
+{% render 'contrast-override',
+  background_color: background_color,
+  text_color: text_color,
+  section_id: block_id,
+  skip_contrast: skip_contrast
+%}
 
 <div
   class="
     group-block
-    group-block--height-{{ settings.height }}
+    {% if settings.height %}group-block--height-{{ settings.height }}{% endif %}
     {% if settings.width %}group-block--width-{{ settings.width }}{% endif %}
     border-style
     spacing-style
     size-style
     {{ class }}
-    {% if background_color != blank %} color-custom-{{ block_id }}{% endif %}
+    {% if background_color != blank or text_color != blank %} color-custom-{{ block_id }}{% endif %}
   "
   style="
     {% render 'border-override', settings: settings %}

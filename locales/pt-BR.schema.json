@@ -589,6 +589,7 @@
     "title_preset": "Predefinição de título"
   },
   "options": {
+    "dark": "Dark",
     "apple": "Apple",
     "arrow": "Seta",
     "auto": "Automático",

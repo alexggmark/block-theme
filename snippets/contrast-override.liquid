@@ -100,9 +100,15 @@
     endif
 
     # Glass lightens its own backdrop, so the label is checked against that, not the surface.
-    capture effective_glass_text
-      render 'util-glass-text', background: background_color, text: text_color
-    endcapture
+    # An explicit text_color is a declared scheme and wins outright — recomputing it could
+    # flip a dark-scheme button's label back to dark.
+    if text_color != blank
+      assign effective_glass_text = text_color
+    else
+      capture effective_glass_text
+        render 'util-glass-text', background: background_color, text: text_color
+      endcapture
+    endif
   endif
 %}
 
@@ -167,6 +173,7 @@
       --color-foreground-rgb: {{ text_color.rgb }};
       --color-foreground-muted: rgb({{ text_color.rgb }} / var(--opacity-muted-text));
       --color-foreground-subdued: rgb({{ text_color.rgb }} / var(--opacity-subdued-text));
+      --glass-text: {{ text_color }};
 
       {% if preset == 'ui' %}
         --color-border: {{ effective_no_bg_border }};

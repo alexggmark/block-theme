@@ -589,6 +589,7 @@
     "title_preset": "标题预设"
   },
   "options": {
+    "dark": "Dark",
     "apple": "Apple",
     "arrow": "箭头",
     "auto": "自动",
