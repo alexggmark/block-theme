@@ -1,0 +1,31 @@
+{%- doc -%}
+  Returns the label colour for glass buttons on a given surface. The sheen lightens
+  whatever sits behind it, so contrast is checked against the composited surface
+  rather than the raw one. May return a `var(--palette-*)` reference.
+
+  @param {color} background - The surface the glass button sits on.
+  @param {color} [text] - Preferred label colour. Defaults to the palette foreground.
+{%- enddoc -%}
+
+{%- liquid
+  assign candidate = text | default: settings.color_palette.foreground
+
+  if background == blank
+    echo candidate
+  else
+    # Weight is the percentage of the piped colour, so 80 = 20% white sheen.
+    assign glass_surface = background | color_mix: '#ffffff', 80
+    assign glass_contrast = glass_surface | color_contrast: candidate
+
+    if glass_contrast >= 4.5
+      echo candidate
+    else
+      assign glass_brightness = glass_surface | color_brightness
+      if glass_brightness > 128
+        echo 'var(--palette-darkest)'
+      else
+        echo 'var(--palette-lightest)'
+      endif
+    endif
+  endif
+-%}

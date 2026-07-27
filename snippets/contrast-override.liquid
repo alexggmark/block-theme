@@ -98,6 +98,11 @@
       assign effective_border_color = contrast_var
       assign effective_border_color_rgb = contrast_rgb_var
     endif
+
+    # Glass lightens its own backdrop, so the label is checked against that, not the surface.
+    capture effective_glass_text
+      render 'util-glass-text', background: background_color, text: text_color
+    endcapture
   endif
 %}
 
@@ -122,6 +127,7 @@
         --color-foreground-subdued: rgb({{ effective_text_color_rgb }} / var(--opacity-subdued-text));
         --color-border: {{ effective_border_color }};
         --color-border-rgb: {{ effective_border_color_rgb }};
+        --glass-text: {{ effective_glass_text }};
       {% endunless %}
     }
 

@@ -1070,44 +1070,189 @@ input:not(:placeholder-shown)::placeholder {
 .button,
 .button--primary,
 button.shopify-payment-button__button--unbranded {
-  --button-color: var(--color-background);
-  --button-background-color: var(--color-foreground);
-  --button-border-color: var(--color-foreground);
-  --button-focus-outline-color: var(--color-foreground);
+  --button-color: var(--palette-background);
+  --button-background-color: var(--palette-foreground);
+  --button-border-color: var(--palette-foreground);
+  --button-focus-outline-color: var(--palette-foreground);
 }
 
 .button--secondary,
 .button-secondary {
-  --button-color: var(--color-foreground);
-  --button-background-color: var(--color-background);
-  --button-border-color: var(--color-foreground);
-  --button-focus-outline-color: var(--color-foreground);
+  --button-color: var(--palette-foreground);
+  --button-background-color: var(--palette-background);
+  --button-border-color: var(--palette-foreground);
+  --button-focus-outline-color: var(--palette-foreground);
 }
 
 .button--outline-primary {
-  --button-color: var(--color-foreground);
+  --button-color: var(--palette-foreground);
   --button-background-color: transparent;
-  --button-border-color: var(--color-foreground);
-  --button-focus-outline-color: var(--color-foreground);
+  --button-border-color: var(--palette-foreground);
+  --button-focus-outline-color: var(--palette-foreground);
 }
 
 .button--outline-secondary {
-  --button-color: var(--color-background);
+  --button-color: var(--palette-background);
   --button-background-color: transparent;
-  --button-border-color: var(--color-background);
-  --button-focus-outline-color: var(--color-background);
+  --button-border-color: var(--palette-background);
+  --button-focus-outline-color: var(--palette-background);
 }
 
-/* Placeholder treatment until the real glass effect lands. */
+@property --glass-angle-1 {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: -75deg;
+}
+
+@property --glass-angle-2 {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: -45deg;
+}
+
 .button--glass {
-  --button-color: #fff;
-  --button-background-color: red;
+  --glass-tint: 255 255 255;
+  --glass-border-width: clamp(1px, 0.0625em, 4px);
+  --glass-time: 400ms;
+  --glass-ease: cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* --glass-text is checked against the sheen-lightened backdrop, not the surface. */
+  --button-color: var(--glass-text, var(--color-foreground));
+  --button-background-color: transparent;
   --button-border-color: transparent;
-  --button-focus-outline-color: red;
+  --button-focus-outline-color: rgb(var(--glass-tint) / 0.8);
+
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(
+    -75deg,
+    rgb(var(--glass-tint) / 0.05),
+    rgb(var(--glass-tint) / 0.2),
+    rgb(var(--glass-tint) / 0.05)
+  );
+  box-shadow: inset 0 0.125em 0.125em rgb(0 0 0 / 0.05),
+    inset 0 -0.125em 0.125em rgb(var(--glass-tint) / 0.5),
+    inset 0 0 0.1em 0.25em rgb(var(--glass-tint) / 0.2),
+    0 0.25em 0.125em -0.125em rgb(0 0 0 / 0.2);
+  backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+  -webkit-backdrop-filter: blur(clamp(1px, 0.125em, 4px));
+  text-shadow: 0 0.25em 0.05em rgb(0 0 0 / 0.1);
+  transition: transform var(--glass-time) var(--glass-ease),
+    box-shadow var(--glass-time) var(--glass-ease);
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .button--glass {
+    background: linear-gradient(
+      -75deg,
+      rgb(var(--glass-tint) / 0.15),
+      rgb(var(--glass-tint) / 0.35),
+      rgb(var(--glass-tint) / 0.15)
+    );
+  }
+}
+
+/* Outline: conic gradient masked to a hairline ring. */
+.button--glass::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  inset: calc(var(--glass-border-width) / -2);
+  padding: var(--glass-border-width);
+  box-sizing: border-box;
+  border-radius: inherit;
+  background: conic-gradient(
+      from var(--glass-angle-1) at 50% 50%,
+      rgb(0 0 0 / 0.5),
+      rgb(0 0 0 / 0) 5% 40%,
+      rgb(0 0 0 / 0.5) 50%,
+      rgb(0 0 0 / 0) 60% 95%,
+      rgb(0 0 0 / 0.5)
+    ),
+    linear-gradient(180deg, rgb(var(--glass-tint) / 0.5), rgb(var(--glass-tint) / 0.5));
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  box-shadow: inset 0 0 0 calc(var(--glass-border-width) / 2) rgb(var(--glass-tint) / 0.5);
+  pointer-events: none;
+  transition: --glass-angle-1 500ms ease;
+}
+
+/* Specular sweep. */
+.button--glass::before {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  inset: calc(var(--glass-border-width) / 2);
+  border-radius: inherit;
+  background: linear-gradient(
+    var(--glass-angle-2),
+    rgb(var(--glass-tint) / 0) 0%,
+    rgb(var(--glass-tint) / 0.5) 40% 50%,
+    rgb(var(--glass-tint) / 0) 55%
+  );
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  transition: background-position calc(var(--glass-time) * 1.25) var(--glass-ease),
+    --glass-angle-2 calc(var(--glass-time) * 1.25) var(--glass-ease);
+}
+
+.button--glass:hover {
+  transform: scale(0.975);
+  box-shadow: inset 0 0.125em 0.125em rgb(0 0 0 / 0.05),
+    inset 0 -0.125em 0.125em rgb(var(--glass-tint) / 0.5),
+    inset 0 0 0.05em 0.1em rgb(var(--glass-tint) / 0.5),
+    0 0.15em 0.05em -0.1em rgb(0 0 0 / 0.25);
+}
+
+.button--glass:hover::before {
+  background-position: 25% 50%;
+}
+
+.button--glass:hover::after {
+  --glass-angle-1: -125deg;
+}
+
+.button--glass:active::before {
+  --glass-angle-2: -15deg;
+
+  background-position: 50% 15%;
+}
+
+.button--glass:active::after {
+  --glass-angle-1: -75deg;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .button--glass::before,
+  .button--glass:active::before {
+    --glass-angle-2: -45deg;
+  }
+
+  .button--glass::after,
+  .button--glass:hover::after,
+  .button--glass:active::after {
+    --glass-angle-1: -75deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button--glass,
+  .button--glass::before,
+  .button--glass::after {
+    transition: none;
+  }
+
+  .button--glass:hover {
+    transform: none;
+  }
 }
 
 .button--underline {
-  --button-color: var(--color-foreground);
+  --button-color: var(--palette-foreground);
   --button-background-color: transparent;
   --button-border-color: transparent;
 
@@ -1118,7 +1263,7 @@ button.shopify-payment-button__button--unbranded {
   text-underline-offset: 0.25em;
 }
 
-.button:hover,
+.button:hover:not(.button--glass),
 .button-secondary:hover,
 button.shopify-payment-button__button--unbranded:hover:not([disabled]) {
   opacity: 0.8;

@@ -90,6 +90,13 @@
   endif
 %}
 
+{% comment %} Glass button label, checked against the sheen-lightened page background {% endcomment %}
+{% liquid
+  capture effective_glass_text
+    render 'util-glass-text', background: settings.color_palette.background
+  endcapture
+%}
+
 {% style %}
   /* Palette colors */
   :root {
@@ -103,6 +110,10 @@
     --palette-lightest-rgb: {{ palette_lightest.rgb }};
     --palette-darkest: {{ palette_darkest }};
     --palette-darkest-rgb: {{ palette_darkest.rgb }};
+
+    /* Never reassigned per-surface, unlike --color-foreground/--color-background. */
+    --palette-foreground: {{ settings.color_palette.foreground }};
+    --palette-background: {{ settings.color_palette.background }};
 
     --color-primary: {{ settings.color_palette.primary }};
     --color-primary-rgb: {{ settings.color_palette.primary.rgb }};
@@ -118,6 +129,8 @@
     --color-secondary-button-text: var(--color-foreground);
     --color-secondary-button-background: var(--color-background);
     --color-secondary-button-border: var(--color-foreground);
+
+    --glass-text: {{ effective_glass_text }};
 
     --color-input-background: rgb({{ settings.palette_input_background.rgba }});
     --color-input-text: rgb({{ settings.palette_input_text.rgba }});
