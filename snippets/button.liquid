@@ -9,7 +9,6 @@
 {%- enddoc -%}
 
 {% assign block_settings = block.settings %}
-{% render 'button-custom-styles', block_settings: block_settings, block_id: block.id %}
 
 <a
   {% if link == blank %}
@@ -21,7 +20,6 @@
   class="
     size-style
     {{ block_settings.style_class }}
-    {{ block_settings.style_class }}--{{ block.id }}
   "
   style="{% render 'size-style', settings: block_settings %}"
   {%- if block_settings.open_in_new_tab -%}

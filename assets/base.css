@@ -1005,7 +1005,6 @@ body:has(.header[transparent]) #header-group > *:not(.header-section) {
 /* Buttons */
 .button,
 .button-secondary,
-.button-custom,
 button.shopify-payment-button__button--unbranded {
   --text-align: center;
 
@@ -1017,11 +1016,14 @@ button.shopify-payment-button__button--unbranded {
   appearance: none;
   background-color: var(--button-background-color);
   border: none;
-  font-family: var(--font-paragraph--family);
+  border-radius: var(--button-border-radius);
+  font-family: var(--button-font-family);
   font-style: var(--font-paragraph--style);
-  font-weight: var(--font-paragraph--weight);
+  font-weight: var(--button-font-weight);
   font-size: var(--font-paragraph--size);
   line-height: var(--font-paragraph--line-height);
+  letter-spacing: var(--button-letter-spacing);
+  text-transform: var(--button-text-case);
   margin-block: 0;
   transition: color var(--animation-speed) var(--animation-easing),
     box-shadow var(--animation-speed) var(--animation-easing),
@@ -1033,25 +1035,8 @@ button.shopify-payment-button__button--unbranded {
   padding-inline: var(--button-padding-inline);
 }
 
-.button {
-  font-family: var(--button-font-family-primary);
-  text-transform: var(--button-text-case-primary);
-  border-radius: var(--style-border-radius-buttons-primary);
-}
-
-.button:not(.button-secondary, .button-unstyled) {
+.button:not(.button-unstyled) {
   outline-color: var(--button-focus-outline-color, var(--button-background-color));
-}
-
-.button-secondary {
-  font-family: var(--button-font-family-secondary);
-  text-transform: var(--button-text-case-secondary);
-  border-radius: var(--style-border-radius-buttons-secondary);
-}
-
-button.shopify-payment-button__button--unbranded {
-  font-family: var(--button-font-family-primary);
-  text-transform: var(--button-text-case-primary);
 }
 
 textarea,
@@ -1083,51 +1068,60 @@ input:not(:placeholder-shown)::placeholder {
 }
 
 .button,
+.button--primary,
 button.shopify-payment-button__button--unbranded {
-  --button-color: var(--color-primary-button-text);
-  --button-background-color: var(--color-primary-button-background);
-  --button-border-color: var(--color-primary-button-border);
-  --button-border-width: var(--style-border-width-primary);
-  --button-focus-outline-color: var(--color-primary-button-focus-outline);
+  --button-color: var(--color-background);
+  --button-background-color: var(--color-foreground);
+  --button-border-color: var(--color-foreground);
+  --button-focus-outline-color: var(--color-foreground);
+}
+
+.button--secondary,
+.button-secondary {
+  --button-color: var(--color-foreground);
+  --button-background-color: var(--color-background);
+  --button-border-color: var(--color-foreground);
+  --button-focus-outline-color: var(--color-foreground);
+}
+
+.button--outline-primary {
+  --button-color: var(--color-foreground);
+  --button-background-color: transparent;
+  --button-border-color: var(--color-foreground);
+  --button-focus-outline-color: var(--color-foreground);
+}
+
+.button--outline-secondary {
+  --button-color: var(--color-background);
+  --button-background-color: transparent;
+  --button-border-color: var(--color-background);
+  --button-focus-outline-color: var(--color-background);
+}
+
+/* Placeholder treatment until the real glass effect lands. */
+.button--glass {
+  --button-color: #fff;
+  --button-background-color: red;
+  --button-border-color: transparent;
+  --button-focus-outline-color: red;
+}
+
+.button--underline {
+  --button-color: var(--color-foreground);
+  --button-background-color: transparent;
+  --button-border-color: transparent;
+
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
 }
 
 .button:hover,
+.button-secondary:hover,
 button.shopify-payment-button__button--unbranded:hover:not([disabled]) {
-  --button-color: var(--color-primary-button-hover-text);
-  --button-background-color: var(--color-primary-button-hover-background);
-  --button-border-color: var(--color-primary-button-hover-border);
-}
-
-.button-secondary {
-  --button-color: var(--color-secondary-button-text);
-  --button-background-color: var(--color-secondary-button-background);
-  --button-border-color: var(--color-secondary-button-border);
-  --button-border-width: var(--style-border-width-secondary);
-}
-
-.button-secondary:hover {
-  --button-color: var(--color-secondary-button-hover-text);
-  --button-background-color: var(--color-secondary-button-hover-background);
-  --button-border-color: var(--color-secondary-button-hover-border);
-}
-
-.button-custom {
-  --button-color: var(--color-primary-button-text);
-  --button-background-color: var(--color-primary-button-background);
-  --button-border-color: var(--color-primary-button-border);
-  --button-border-width: var(--style-border-width-secondary);
-  --button-focus-outline-color: var(--color-primary-button-focus-outline);
-
-  font-family: var(--button-font-family-primary);
-  text-transform: var(--button-text-case-primary);
-  border-radius: var(--style-border-radius-buttons-primary);
-  outline-color: var(--button-focus-outline-color, var(--button-background-color));
-}
-
-.button-custom:hover {
-  --button-color: var(--color-primary-button-hover-text);
-  --button-background-color: var(--color-primary-button-hover-background);
-  --button-border-color: var(--color-primary-button-hover-border);
+  opacity: 0.8;
 }
 
 /* Needed to override the default Shopify styles */

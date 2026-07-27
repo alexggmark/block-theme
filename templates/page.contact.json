@@ -94,7 +94,7 @@
               "static": true,
               "settings": {
                 "label": "Submit",
-                "style_class": "button",
+                "style_class": "button button--primary",
                 "width": "fit-content",
                 "custom_width": 100,
                 "width_mobile": "fit-content",

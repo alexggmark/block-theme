@@ -24,78 +24,6 @@
   endfor
 %}
 
-{% comment %} Primary button effective values {% endcomment %}
-{% liquid
-  if settings.palette_primary_button_background.alpha == 0
-    assign effective_primary_button_focus_outline = settings.palette_primary_button_text
-  else
-    assign effective_primary_button_focus_outline = settings.palette_primary_button_background
-  endif
-
-  capture effective_primary_button_hover_background
-    render 'util-palette-hover-shift', color: settings.palette_primary_button_background
-  endcapture
-  if settings.palette_primary_button_background.alpha == 1
-    assign primary_hover_background_has_alpha = false
-  else
-    assign primary_hover_background_has_alpha = true
-  endif
-
-  assign primary_hover_brightness = effective_primary_button_hover_background | color_brightness
-  if primary_hover_brightness > 128
-    assign primary_button_hover_contrast = palette_darkest
-  else
-    assign primary_button_hover_contrast = palette_lightest
-  endif
-
-  if primary_hover_background_has_alpha
-    assign effective_primary_button_hover_text = settings.palette_primary_button_text
-  else
-    assign effective_primary_button_hover_text = primary_button_hover_contrast
-  endif
-
-  if settings.palette_primary_button_border == settings.palette_primary_button_background
-    assign effective_primary_button_hover_border = effective_primary_button_hover_background
-  else
-    capture effective_primary_button_hover_border
-      render 'util-palette-hover-shift', color: settings.palette_primary_button_border
-    endcapture
-  endif
-%}
-
-{% comment %} Secondary button hover effective values {% endcomment %}
-{% liquid
-  capture effective_secondary_button_hover_background
-    render 'util-palette-hover-shift', color: settings.palette_secondary_button_background
-  endcapture
-  if settings.palette_secondary_button_background.alpha == 1
-    assign secondary_hover_background_has_alpha = false
-  else
-    assign secondary_hover_background_has_alpha = true
-  endif
-
-  assign secondary_hover_brightness = effective_secondary_button_hover_background | color_brightness
-  if secondary_hover_brightness > 128
-    assign secondary_button_hover_contrast = palette_darkest
-  else
-    assign secondary_button_hover_contrast = palette_lightest
-  endif
-
-  if secondary_hover_background_has_alpha
-    assign effective_secondary_button_hover_text = settings.palette_secondary_button_text
-  else
-    assign effective_secondary_button_hover_text = secondary_button_hover_contrast
-  endif
-
-  if settings.palette_secondary_button_border == settings.palette_secondary_button_background
-    assign effective_secondary_button_hover_border = effective_secondary_button_hover_background
-  else
-    capture effective_secondary_button_hover_border
-      render 'util-palette-hover-shift', color: settings.palette_secondary_button_border
-    endcapture
-  endif
-%}
-
 {% comment %} Variant hover effective values (smart contrast for fallback text/border) {% endcomment %}
 {% liquid
   capture effective_variant_hover_background
@@ -182,20 +110,14 @@
     --color-secondary-rgb: {{ settings.color_palette.secondary.rgb }};
     {% render 'brightness-opacities', background: settings.color_palette.background %}
 
-    --color-primary-button-text: rgb({{ settings.palette_primary_button_text.rgba }});
-    --color-primary-button-background: rgb({{ settings.palette_primary_button_background.rgba }});
-    --color-primary-button-border: rgb({{ settings.palette_primary_button_border.rgba }});
-    --color-primary-button-focus-outline: rgb({{ effective_primary_button_focus_outline.rgb }});
-    --color-primary-button-hover-text: rgb({{ effective_primary_button_hover_text.rgba }});
-    --color-primary-button-hover-background: {{ effective_primary_button_hover_background }};
-    --color-primary-button-hover-border: {{ effective_primary_button_hover_border }};
+    --color-primary-button-text: var(--color-background);
+    --color-primary-button-background: var(--color-foreground);
+    --color-primary-button-border: var(--color-foreground);
+    --color-primary-button-focus-outline: var(--color-foreground);
 
-    --color-secondary-button-text: rgb({{ settings.palette_secondary_button_text.rgba }});
-    --color-secondary-button-background: rgb({{ settings.palette_secondary_button_background.rgba }});
-    --color-secondary-button-border: rgb({{ settings.palette_secondary_button_border.rgba }});
-    --color-secondary-button-hover-text: rgb({{ effective_secondary_button_hover_text.rgba }});
-    --color-secondary-button-hover-background: {{ effective_secondary_button_hover_background }};
-    --color-secondary-button-hover-border: {{ effective_secondary_button_hover_border }};
+    --color-secondary-button-text: var(--color-foreground);
+    --color-secondary-button-background: var(--color-background);
+    --color-secondary-button-border: var(--color-foreground);
 
     --color-input-background: rgb({{ settings.palette_input_background.rgba }});
     --color-input-text: rgb({{ settings.palette_input_text.rgba }});

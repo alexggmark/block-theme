@@ -23,7 +23,7 @@
           "settings": {
             "label": "Primary",
             "link": "shopify://collections/all",
-            "style_class": "button"
+            "style_class": "button button--primary"
           }
         },
         "button_secondary": {
@@ -31,7 +31,7 @@
           "settings": {
             "label": "Secondary",
             "link": "shopify://collections/all",
-            "style_class": "button-secondary"
+            "style_class": "button button--secondary"
           }
         },
         "button_unstyled": {
@@ -39,7 +39,7 @@
           "settings": {
             "label": "Unstyled",
             "link": "shopify://collections/all",
-            "style_class": "button-unstyled"
+            "style_class": "button button--underline"
           }
         }
       },

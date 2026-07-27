@@ -1267,130 +1267,28 @@
     "name": "t:names.buttons",
     "settings": [
       {
-        "type": "header",
-        "content": "t:options.button_primary"
-      },
-      {
-        "type": "color",
-        "id": "palette_primary_button_background",
-        "label": "t:settings.background",
-        "default": "{{ settings.color_palette.foreground }}",
-        "alpha": true
-      },
-      {
-        "type": "color",
-        "id": "palette_primary_button_text",
-        "label": "t:settings.text",
-        "default": "{{ settings.color_palette.background }}",
-        "alpha": true
-      },
-      {
-        "type": "color",
-        "id": "palette_primary_button_border",
-        "label": "t:settings.borders",
-        "default": "{{ settings.color_palette.background }}",
-        "alpha": true
-      },
-      {
         "type": "range",
-        "id": "primary_button_border_width",
-        "min": 0,
-        "max": 4,
-        "step": 1,
-        "unit": "px",
-        "label": "t:settings.border_width",
-        "default": 0
-      },
-      {
-        "type": "range",
-        "id": "button_border_radius_primary",
+        "id": "button_border_radius",
+        "label": "t:settings.border_radius",
         "min": 0,
         "max": 100,
         "step": 1,
         "unit": "px",
-        "label": "t:settings.border_radius",
         "default": 100
       },
       {
-        "type": "select",
-        "id": "type_font_button_primary",
-        "label": "t:settings.font",
-        "options": [
-          {
-            "value": "body",
-            "label": "t:options.body"
-          },
-          {
-            "value": "accent",
-            "label": "t:options.accent"
-          }
-        ],
-        "default": "body"
-      },
-      {
-        "type": "select",
-        "id": "button_text_case_primary",
-        "label": "t:settings.button_text_case",
-        "options": [
-          {
-            "value": "default",
-            "label": "t:options.default"
-          },
-          {
-            "value": "uppercase",
-            "label": "t:options.uppercase"
-          }
-        ],
-        "default": "default"
-      },
-      {
-        "type": "header",
-        "content": "t:options.button_secondary"
-      },
-      {
-        "type": "color",
-        "id": "palette_secondary_button_background",
-        "label": "t:settings.background",
-        "default": "{{ settings.color_palette.background }}",
-        "alpha": true
-      },
-      {
-        "type": "color",
-        "id": "palette_secondary_button_text",
-        "label": "t:settings.text",
-        "default": "{{ settings.color_palette.foreground }}",
-        "alpha": true
-      },
-      {
-        "type": "color",
-        "id": "palette_secondary_button_border",
-        "label": "t:settings.borders",
-        "default": "{{ settings.color_palette.foreground }}",
-        "alpha": true
-      },
-      {
         "type": "range",
-        "id": "secondary_button_border_width",
+        "id": "button_border_width",
+        "label": "t:settings.border_width",
         "min": 0,
-        "max": 4,
+        "max": 6,
         "step": 1,
         "unit": "px",
-        "label": "t:settings.border_width",
         "default": 1
       },
       {
-        "type": "range",
-        "id": "button_border_radius_secondary",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-        "unit": "px",
-        "label": "t:settings.border_radius",
-        "default": 100
-      },
-      {
         "type": "select",
-        "id": "type_font_button_secondary",
+        "id": "type_font_button",
         "label": "t:settings.font",
         "options": [
           {
@@ -1406,11 +1304,11 @@
       },
       {
         "type": "select",
-        "id": "button_text_case_secondary",
+        "id": "button_text_case",
         "label": "t:settings.button_text_case",
         "options": [
           {
-            "value": "default",
+            "value": "none",
             "label": "t:options.default"
           },
           {
@@ -1418,7 +1316,51 @@
             "label": "t:options.uppercase"
           }
         ],
-        "default": "default"
+        "default": "none"
+      },
+      {
+        "type": "select",
+        "id": "button_letter_spacing",
+        "label": "t:settings.letter_spacing",
+        "options": [
+          {
+            "value": "-0.02em",
+            "label": "t:options.tight"
+          },
+          {
+            "value": "normal",
+            "label": "t:options.normal"
+          },
+          {
+            "value": "0.05em",
+            "label": "t:options.loose"
+          }
+        ],
+        "default": "normal"
+      },
+      {
+        "type": "select",
+        "id": "button_font_weight",
+        "label": "t:settings.font_weight",
+        "options": [
+          {
+            "value": "400",
+            "label": "t:options.regular"
+          },
+          {
+            "value": "500",
+            "label": "t:options.medium"
+          },
+          {
+            "value": "600",
+            "label": "t:options.semibold"
+          },
+          {
+            "value": "700",
+            "label": "t:options.bold"
+          }
+        ],
+        "default": "500"
       },
       {
         "type": "header",

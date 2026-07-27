@@ -117,7 +117,7 @@
             "input_text_color": "#333333",
             "input_border_color": "#DFDFDF",
             "input_type_preset": "paragraph",
-            "style_class": "button-unstyled",
+            "style_class": "button button--underline",
             "display_type": "arrow",
             "label": "Sign up",
             "integrated_button": true,
